@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,550;1,9..144,450;1,9..144,500&display=swap" rel="stylesheet">
+<title>Precifica Doce — Planilha de precificação para confeitaria</title>
+
+<script>
+  // Troque somente esta constante quando o link real de checkout da Kiwify estiver pronto.
+  window.PRECIFICA_DOCE_CHECKOUT = "https://pay.kiwify.com.br/T4FTFQ8";
+</script>
+
+<style>
+:root { --choco:#3c241f; --choco2:#5c3a2e; --caramel:#b08d57; --cream:#f7f1ea; --paper:#fffaf4; --ink:#2c1810; --muted:#6e5d54; --line:#e4d6c6; --amber:#fff4d6; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "DM Sans", sans-serif; background: var(--cream); color: var(--ink); line-height: 1.55; }
+h1,h2,h3,.serif { font-family: Fraunces, Georgia, serif; }
+a { color: inherit; }
+.wrap { width: min(1080px, calc(100% - 40px)); margin: 0 auto; }
+header.top { display:flex; justify-content:space-between; align-items:center; padding: 22px 0; }
+.logo { letter-spacing: .16em; text-transform: uppercase; font-size: 12px; font-weight: 700; color: var(--choco); }
+.logo span { color: var(--caramel); }
+.hero { display:grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items:center; padding: 24px 0 72px; }
+.kicker { letter-spacing:.16em; text-transform:uppercase; font-size:11px; font-weight:700; color:var(--caramel); margin-bottom:14px; }
+h1 { font-size: clamp(34px, 5vw, 54px); font-weight: 500; line-height: 1.12; color: var(--choco); }
+h1 em { font-style: italic; color: var(--choco2); }
+.lead { font-size: 18px; color: var(--muted); margin: 20px 0 28px; max-width: 540px; }
+.cta { display:inline-block; background:var(--choco); color:var(--paper); text-decoration:none; padding:16px 28px; font-weight:700; letter-spacing:.02em; border-radius: 2px; }
+.cta:hover { background:#2a1814; }
+.price-note { margin-top:14px; font-size:14px; color:var(--muted); }
+.price-note strong { color:var(--choco); font-size:20px; }
+.hero-card { background:var(--choco); color:var(--paper); padding: 36px 32px; min-height: 380px; display:flex; flex-direction:column; justify-content:space-between; }
+.hero-card .small { letter-spacing:.14em; text-transform:uppercase; font-size:11px; color:var(--caramel); }
+.hero-card ol { margin: 20px 0 0 18px; }
+.hero-card li { margin: 0 0 10px; }
+section { padding: 64px 0; }
+section.alt { background: var(--paper); }
+h2 { font-size: clamp(26px, 3vw, 36px); font-weight: 550; color: var(--choco); margin-bottom: 12px; }
+.sub { color:var(--muted); margin-bottom: 32px; max-width: 640px; }
+.benefits { display:grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.ben { border:1px solid var(--line); background:var(--paper); padding: 22px 22px 18px; }
+section.alt .ben { background:var(--cream); }
+.ben h3 { font-size: 20px; margin-bottom: 8px; color:var(--choco); }
+.include { display:grid; grid-template-columns: 1.2fr .8fr; gap: 32px; align-items:start; }
+.include ul { list-style:none; }
+.include li { padding: 12px 0; border-bottom:1px solid var(--line); }
+.include li:first-child { padding-top:0; }
+.box { background:var(--choco); color:var(--paper); padding: 28px; }
+.box .tag { color:var(--caramel); letter-spacing:.14em; text-transform:uppercase; font-size:11px; font-weight:700; }
+.box .p { font-family: Fraunces, serif; font-size: 40px; margin: 10px 0 6px; }
+.box p { color:#f3ebe3; }
+.faq details { border-bottom:1px solid var(--line); padding: 14px 0; }
+.faq summary { cursor:pointer; font-weight:700; color:var(--choco); list-style:none; }
+.faq summary::-webkit-details-marker { display:none; }
+.faq details p { margin-top:8px; color:var(--muted); }
+.guarantee { display:grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.call { background:var(--amber); border-left:4px solid var(--caramel); padding: 18px 20px; margin-top: 24px; }
+.foot { background:var(--choco); color:#e6dcd0; padding: 36px 0; font-size:13px; }
+.foot .wrap { display:flex; justify-content:space-between; gap:24px; }
+.disc { font-size:13px; color:var(--muted); margin-top:28px; max-width: 760px; }
+@media (max-width: 800px) {
+  .hero, .benefits, .include, .guarantee, .foot .wrap { grid-template-columns: 1fr; }
+  header.top { padding: 16px 0; }
+  .hero { padding-bottom: 40px; }
+  section { padding: 48px 0; }
+}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div class="logo">Precifica <span>Doce</span></div>
+      <a class="cta" href="https://pay.kiwify.com.br/T4FTFQ8" data-checkout style="padding:10px 16px;font-size:14px">Comprar — R$ 37</a>
+    </header>
+
+    <section class="hero" style="padding-top:8px">
+      <div>
+        <div class="kicker">Planilha para confeitaria e alimentos caseiros</div>
+        <h1>Pare de precificar no chute. Veja o custo real de cada doce.</h1>
+        <p class="lead">Uma planilha que junta ingredientes, embalagem, o seu tempo, as contas do mês e a taxa da maquininha — e mostra um preço mínimo e um preço sugerido. Sem fórmula mágica. Sem promessa de lucro.</p>
+        <a class="cta" href="https://pay.kiwify.com.br/T4FTFQ8" data-checkout>Quero a planilha por R$ 37</a>
+        <p class="price-note">Pagamento único. Acesso imediato. Garantia de 7 dias pela Kiwify.</p>
+      </div>
+      <aside class="hero-card">
+        <div>
+          <div class="small">Como funciona</div>
+          <p class="serif" style="font-size:28px;line-height:1.2;margin:14px 0 8px">Você preenche o que já sabe. A conta aparece sozinha.</p>
+        </div>
+        <ol>
+          <li>Cadastre o que você compra e o preço do pacote</li>
+          <li>Informe as contas do mês e o valor da sua hora</li>
+          <li>Monte a ficha da receita e compare com o preço de hoje</li>
+        </ol>
+      </aside>
+    </section>
+  </div>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2>O que a planilha deixa visível</h2>
+      <p class="sub">Não é um curso de enriquecimento. É uma conta organizada, para você decidir o preço com os números na frente.</p>
+      <div class="benefits">
+        <div class="ben"><h3>Custo por grama, ml ou unidade</h3><p>Você informa o preço da embalagem e o tamanho. A planilha calcula o que cada receita realmente usa.</p></div>
+        <div class="ben"><h3>Embalagem no preço, não “depois”</h3><p>Pote, forminha, caixa do cento e colher entram na ficha, por unidade ou no lote.</p></div>
+        <div class="ben"><h3>O seu tempo tem hora</h3><p>Você diz quanto quer retirar no mês e quantas horas dedica. A hora entra no lote. Isso não é previsão de renda: é um jeito de não esquecer o tempo.</p></div>
+        <div class="ben"><h3>Contas do mês rateadas</h3><p>Gás, luz, água, internet, DAS e outros fixos são divididos pelas suas horas e aplicados ao tempo de cada receita.</p></div>
+        <div class="ben"><h3>Preço mínimo e preço sugerido</h3><p>O mínimo cobre custo e taxa da maquininha, com margem zero nesta conta. O sugerido inclui a margem que você escolheu. Nenhum dos dois garante venda.</p></div>
+        <div class="ben"><h3>Comparação com o preço atual</h3><p>A planilha mostra se o valor de hoje cobre o custo, se está abaixo da margem desejada ou se, nesta conta, há prejuízo — e um resumo com gráficos.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap include">
+      <div>
+        <h2>O que você recebe</h2>
+        <p class="sub">Tudo digital, para baixar na hora após a confirmação do pagamento.</p>
+        <ul>
+          <li><strong>Planilha Precifica Doce</strong> (.xlsx), sem macros, para Excel e Google Planilhas, com células de fórmula protegidas e campos amarelos para preencher.</li>
+          <li><strong>Oito abas:</strong> Comece Aqui, Ingredientes, Embalagens, Custos Fixos, Mão de Obra, Fichas Técnicas (até 10 receitas), Precificação e Resumo com gráficos.</li>
+          <li><strong>Duas receitas de exemplo</strong> (bolo de pote e cento de brigadeiro), claramente marcadas como exemplo, só para você ver a planilha funcionando.</li>
+          <li><strong>Guia em PDF</strong> “Como precificar seus doces sem chute” (8 páginas), com a lógica da conta, o passo a passo da planilha e os exemplos comentados.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <div class="tag">Pagamento único</div>
+        <div class="p">R$ 37</div>
+        <p>Pix ou cartão no checkout da Kiwify. Sem assinatura. O arquivo é seu para uso pessoal.</p>
+        <p style="margin-top:16px"><a class="cta" href="https://pay.kiwify.com.br/T4FTFQ8" data-checkout style="background:#f0d7a8;color:#3c241f">Comprar agora</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap guarantee">
+      <div>
+        <h2>Garantia de 7 dias</h2>
+        <p>Se a planilha ou o guia não fizerem sentido para você, peça o reembolso pela Kiwify em até 7 dias corridos após a compra, no prazo padrão da plataforma. Você recebe de volta o valor pago, segundo as regras da Kiwify.</p>
+      </div>
+      <div>
+        <h2>Para quem é</h2>
+        <p>Para quem faz doces, salgados ou alimentos caseiros e quer organizar o preço com os próprios números. Serve no Excel e no Google Planilhas, no computador ou no celular (o computador é mais confortável nas fichas).</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="call"><strong>Um aviso direto.</strong> Esta planilha não garante lucro, clientes, faturamento nem qualquer resultado financeiro. Ela calcula com base no que você informa. O preço que você cobra é uma decisão sua. Os exemplos são fictícios e devem ser substituídos.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Perguntas frequentes</h2>
+      <div class="faq">
+        <details open><summary>Preciso saber Excel?</summary><p>Não. Você preenche as células amarelas e escolhe itens nas listas. As fórmulas já estão prontas e protegidas.</p></details>
+        <details><summary>Funciona no Google Planilhas?</summary><p>Sim. Envie o arquivo para o Drive e abra com o Planilhas. Em Arquivo &gt; Configurações, escolha Localidade: Brasil. A proteção de células do Excel pode não vir junto: evite editar as células claras. Não há macros.</p></details>
+        <details><summary>Os preços de exemplo são da minha cidade?</summary><p>Não. São valores fictícios, só para demonstração. Troque pelos preços que você realmente paga e pelo tempo das suas receitas.</p></details>
+        <details><summary>E se o preço sugerido ficar alto para os meus clientes?</summary><p>A planilha não escolhe o preço por você. Ela mostra a conta. Você pode revisar a retirada desejada, as horas, a receita, a margem ou a forma como vende.</p></details>
+        <details><summary>Serve para marmita, salgado ou bolo inteiro?</summary><p>Sim, para qualquer receita em que você liste ingredientes, rendimento e tempo.</p></details>
+        <details><summary>A planilha substitui o contador?</summary><p>Não. O DAS que aparece nos exemplos é só um custo fixo ilustrativo. Imposto, MEI e declarações são assunto para um profissional.</p></details>
+        <details><summary>Como recebo o produto?</summary><p>Depois do pagamento aprovado, a Kiwify libera o acesso na área de membros e envia os dados por e-mail. O checkout abaixo é um espaço reservado até o link real ser cadastrado.</p></details>
+      </div>
+      <p class="disc">Precifica Doce é um material informativo de organização e cálculo. Não é consultoria, assessoria fiscal nem recomendação de preço de mercado. Uso pessoal de quem comprou. Checkout provisório: o botão aponta para um link reservado da Kiwify, a ser substituído quando a conta e o produto estiverem publicados.</p>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div>Precifica Doce  ·  planilha de precificação para confeitaria e alimentos caseiros</div>
+      <div>R$ 37  ·  garantia de 7 dias  ·  Excel e Google Planilhas</div>
+    </div>
+  </footer>
+
+<script>
+  (function () {
+    var url = window.PRECIFICA_DOCE_CHECKOUT;
+    if (!url) return;
+    document.querySelectorAll("[data-checkout]").forEach(function (el) {
+      el.setAttribute("href", url);
+    });
+  })();
+</script>
+
+</body>
+</html>
